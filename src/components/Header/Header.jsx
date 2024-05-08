@@ -14,7 +14,34 @@ import AddAlertRoundedIcon from '@mui/icons-material/AddAlertRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import { Button, FormControl, IconButton, InputAdornment, InputBase } from '@mui/material';
 
+import image from "../../assets/img/panda-avatar.jpg"
+import image2 from "../../assets/img/panda-2.jpg"
+
+
 export default function Header() {
+    const listIcon = [
+        {
+            id: 1,
+            item: HomeIcon,
+        },
+        {
+            id: 2,
+            item: OndemandVideoIcon,
+        },
+        {
+            id: 3,
+            item: StorefrontIcon,
+        },
+        {
+            id: 4,
+            item: GroupIcon,
+        },
+        {
+            id: 5,
+            item: ExtensionIcon,
+        },
+    ]
+
     return (
         <div className='header-container'>
 
@@ -33,7 +60,7 @@ export default function Header() {
 
             <div className='header-icon'>
                 <ul>
-                    <li>
+                    {/* <li>
                         <Button className='header-icon-btn'>
                             <HomeIcon className='header-icon-item' />
                         </Button>
@@ -57,34 +84,44 @@ export default function Header() {
                         <Button className='header-icon-btn'>
                             <ExtensionIcon className='header-icon-item' />
                         </Button>
-                    </li>
+                    </li> */}
+
+                    {listIcon.map((icon) => (
+                        <li key={icon.id}>
+                            <Button className='header-icon-btn'>
+                                <icon.item className='header-icon-item' />
+                            </Button>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
             <div className='header-alert'>
-                <div className='header-right-side'>
-                    <div className='header-avatar'>
-                        <div className="avatar">
-                            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Nck5xJk_J0XASSjRuPFzI5dvpDcrcp8Rdg4arwXeCw&s' />
-                        </div>
-                        <div className="name">
-                            <p>Elys Gabriela</p>
-                        </div>
+                <div className='header-avatar'>
+                    <div className="avatar">
+                        {/* <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Nck5xJk_J0XASSjRuPFzI5dvpDcrcp8Rdg4arwXeCw&s' /> */}
+                        <img src={image} />
+                        {/* <Avatar alt="" src={image}/> */}
                     </div>
-                    <div className='header-notice'>
-                        <IconButton className='header-alert-btn'>
-                            <AddRoundedIcon className='alert-btn' />
-                        </IconButton>
-                        <IconButton className='header-alert-btn'>
-                            <MessageRoundedIcon className='alert-btn' />
-                        </IconButton>
-                        <IconButton className='header-alert-btn'>
-                            <AddAlertRoundedIcon className='alert-btn' />
-                        </IconButton>
-                        <IconButton className='header-alert-btn'>
-                            <ArrowDropDownRoundedIcon className='alert-btn' />
-                        </IconButton>
+                    <div className="name">
+                        <p>Elys Gabriela</p>
                     </div>
+                </div>
+                <div className='header-notice'>
+                    <IconButton className='header-alert-btn'>
+                        <AddRoundedIcon className='alert-btn' />
+                    </IconButton>
+                    <IconButton className='header-alert-btn'>
+                        <MessageRoundedIcon className='alert-btn' />
+                        <span className="number-alert">1</span>
+                    </IconButton>
+                    <IconButton className='header-alert-btn'>
+                        <AddAlertRoundedIcon className='alert-btn' />
+                        <span className="number-alert">3</span>
+                    </IconButton>
+                    <IconButton className='header-alert-btn'>
+                        <ArrowDropDownRoundedIcon className='alert-btn' />
+                    </IconButton>
                 </div>
             </div>
         </div>

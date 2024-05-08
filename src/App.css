@@ -40,6 +40,10 @@
 .read-the-docs {
   color: #888;
 } */
+
+body{
+  /* font-family: 'Courier New', Courier, monospace; */
+}
 #root {
-  max-width: 1500px;
+  /* max-width: 1500px; */
 }
