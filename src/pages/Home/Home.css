@@ -1,13 +1,26 @@
-.home-container {
-    padding: 20px 0 0 15px;
+/* .whole-home{
     background-color: rgb(240, 238, 238);
     display: flex;
-    flex-direction: row;
-}
-.lefthome-container{
+    justify-content: center;
+} */
+
+
+.home-container {
+    background-color: rgb(240, 238, 238);
     display: flex;
-    flex: 3;
+    /* flex-direction: row; */
+}
+
+
+
+.lefthome-container{
+    padding: 20px 0 0 15px;
+    display: flex;
     flex-direction: column;
+    /* flex: 3; */
+    width: 25%;
+    overflow-y: scroll;
+    height: calc(100vh - 100px);
 }
 .home-left-A {
     width: 100%;
@@ -15,6 +28,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* margin-bottom: 15px; */
 }
 
 .home-left-A ul {
@@ -33,24 +47,25 @@
 }
 
 .home-avatar-profile{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     padding-right: 15px;
 }
 .home-avatar-profile img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     border-radius: 100%;
 }
 
 .home-avatar-img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     padding-right: 15px;
 }
 .home-avatar-img img {
     width: 90%;
     height: 90%;
+    border-radius: 5px;
 }
 
 .home-avatar-name {
@@ -60,8 +75,10 @@
 
 .home-avatar:hover{
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
+
 
 .btn-see-more{
     width: 80%;
@@ -85,7 +102,7 @@
 
 .home-left-B {
     width: 100%;
-    padding-top: 15px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,9 +126,22 @@
     top: -30%;
     right: 5%;
     cursor: pointer;
-    padding: 5px
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.title .icon:hover{
+.title .icon2 {
+    position: absolute;
+    top: -30%;
+    right: 15%;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title .icon:hover, .title .icon2:hover{
     background-color: lightgray;
     border-radius: 100%;
     color: black;
@@ -125,18 +155,43 @@
     width: 100%;
     list-style-type: none;
 }
+/* cách khác để chỉnh hình shortcuts */
+/* .home-left-B .home-avatar-img2{
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.home-left-B .home-avatar-img2 img{
+    display: block;
+    width: 150%;
+    height: 100%;
+} */
+
+
+
+
 
 /* News Feed */
-.newsfeed-container{
-    display: flex;
-    flex: 6;
-}
+/* code tiếp ở component */
+
+
+
+
 
 /* Right Home */
 .righthome-container{
+    padding-top: 20px;
     display: flex;
-    flex: 3;
+    /* flex: 3; */
+    width: 25%;
     flex-direction: column;
+    overflow-y: scroll;
+    height: calc(100vh - 100px);
 }
 
 .righthome-container .sponsored{
@@ -154,7 +209,8 @@
     display: flex;
 }
 .sponsored-label{
-    width: 15%
+    width: 15%;
+    cursor: pointer;
 }
 .sponsored-label img{
     width: 45px;
@@ -163,6 +219,14 @@
 }
 .sponsored-content{
     width: 85%;
+}
+.sponsored-content-title{
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sponsored-content-title:hover{
+    text-decoration: underline;
 }
 .sponsored-content img{
     width: 280px;
@@ -175,12 +239,16 @@
     width: 100%;
     margin-bottom: 5px;
 }
-/* .birthday .title{
+/* cx có thể sửa class .title của .birthday dù cho .title có trùng tên với nhiều class .title khác 
+NHƯNG nó chỉ sửa được những cái khác biệt, còn lại vẫn ăn thuộc tính của những class trùng tên trước đó*/
+/* .birthday .title{ 
     margin-top: 10px;
 } */
 .birthday-content{
-    width: 100%;
+    width: 95%;
     display: flex;
+    cursor: pointer;
+    padding: 5px;
 }
 .birthday-img {
     width: 15%;
@@ -192,9 +260,17 @@
 .birthday-today{
     width: 85%;
 }
- 
+.birthday-content:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+
+.contacts{
+    margin-bottom: 10px;
+}
 .contacts-list{
- 
+
 }
 .contacts-list ul{
     
@@ -222,11 +298,11 @@
 }
 .contacts-list li:hover, .groupchats-list li:hover{
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .group-chats{
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .btn-new-group{
     width: 95%;

@@ -1,0 +1,193 @@
+.newsfeed-container{
+    padding-top: 20px;
+    display: flex;
+    /* flex: 6; */
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 50%;
+
+}
+
+
+
+/* Stories */
+.stories-container{
+    width: 90%;
+    display: flex;
+    /* justify-content: center; */
+    position: relative; /*làm gốc để chỉnh cho .scroll-button*/
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+.stories{
+    /* width: 80%; */ /*viết cái này thì sẽ ko kéo khung stories qua lại đc*/
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease; /* để khi scroll nó mượt hơn*/
+}
+/*  div:nth-of-type(even) được sử dụng để chọn tất cả các phần tử <div> 
+nằm ở các vị trí chẵn trong số các anh chị em cùng loại của chúng */
+.stories div:nth-of-type(even){
+    margin: 0 20px;
+}
+.story-box{
+    /* tập code ở Stories.jsx */
+    /* width: 50px;
+    height: 150px; */
+}
+/* .story-box::before dùng để code 1 lớp nằm phía trên .story-box */
+.story-box::before{
+    content: ""; /* khi xài ::before BẮT BUỘC phải viết cái này */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3); /*độ trong suốt là 0.3*/
+    z-index: 1; /*cho z-index là 1 thì những cái khác muốn hiện lên trên thì cứ cho z-index: 2*/
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.story-box .username{
+    position: absolute;
+    z-index: 2;
+    bottom: 3%;
+    font-weight: bold;
+}
+.scroll-button{
+    position: absolute;
+    top: 40%;
+    /* color: rgb(214, 214, 214); */
+    color: black;
+    background-color: white;
+    border-radius: 100%;
+    /* padding: 0px 10px 0 20px; */
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
+}
+.scroll-button:hover{
+    background-color: lightgray;
+    border-radius: 100%;
+}
+
+
+
+
+
+
+/* Post Status */
+.poststatus-container{
+
+}
+
+
+
+
+
+
+
+/* News Content */
+.newscontent-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.posting-place{
+    width: 85%;
+    background-color: white;
+    border-radius: 10px;
+}
+.top-posting-place{
+    padding: 15px 15px 0 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.top-posting-place-img{   
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.top-posting-place-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.top-posting-place-write{
+    width: 90%;
+}
+.bottom-posting-place{
+    padding: 5px 15px;
+}
+.bottom-posting-place ul{
+    display: flex;
+    width: 100%;
+}
+.bottom-posting-place li{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    cursor: pointer;
+    padding: 5px;
+}
+.bottom-posting-place li:hover{
+    background-color: rgb(232, 228, 228);
+    border-radius: 10px;
+}
+.bottom-posting-place-icon{
+    margin-right: 5px;
+}
+.bottom-posting-place-icon img{
+    width: 40px;
+    height: 40px;
+}
+.bottom-posting-place span{
+}
+
+.post{
+    margin-top: 20px;
+    width: 85%;
+    background-color: white;
+    border-radius: 10px;
+}
+.top-post{
+    padding: 15px 15px 0 15px;
+    display: flex;
+    align-items: center;
+}
+.top-post-ava{
+    margin-right: 10px;
+}
+.top-post-ava img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.top-post-name{
+
+}
+.top-post-name-title{
+    font-size: 14px;
+    font-weight: bold;
+}
+.top-post-name-hours p{
+    font-size: 13px;
+    color: rgb(109, 109, 109);
+}

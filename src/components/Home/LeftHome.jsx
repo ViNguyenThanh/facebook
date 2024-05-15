@@ -1,33 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import image from "../../assets/img/panda-avatar.jpg"
-import friends from "../../assets/img/friend.png"
-import groups from "../../assets/img/groups.png"
-import saved from "../../assets/img/saved.png"
-import feeds from "../../assets/img/feed.png"
-import marketplace from "../../assets/img/market.png"
-import ads_manager from "../../assets/img/analytics.png"
-import climate from "../../assets/img/climate.png"
-import events from "../../assets/img/events.webp"
-import fundraisers from "../../assets/img/facebook-reactions.png"
-import gaming from "../../assets/img/gaming.png"
-import memories from "../../assets/img/memories.png"
-import messenger from "../../assets/img/messenger.png"
-import messenger_kids from "../../assets/img/messenger-kids.png"
-import card from "../../assets/img/credit-card.png"
-import pages from "../../assets/img/pages.png"
-import video_game from "../../assets/img/video-game.png"
-import recent from "../../assets/img/recent.png"
-import video from "../../assets/img/video.png"
+import friends from "../../assets/icon/friend.png"
+import groups from "../../assets/icon/groups.png"
+import saved from "../../assets/icon/saved.png"
+import feeds from "../../assets/icon/feed.png"
+import marketplace from "../../assets/icon/market.png"
+import ads_manager from "../../assets/icon/analytics.png"
+import climate from "../../assets/icon/climate.png"
+import events from "../../assets/icon/events.webp"
+import fundraisers from "../../assets/icon/facebook-reactions.png"
+import gaming from "../../assets/icon/gaming.png"
+import memories from "../../assets/icon/memories.png"
+import messenger from "../../assets/icon/messenger.png"
+import messenger_kids from "../../assets/icon/messenger-kids.png"
+import card from "../../assets/icon/credit-card.png"
+import pages from "../../assets/icon/pages.png"
+import video_game from "../../assets/icon/video-game.png"
+import recent from "../../assets/icon/recent.png"
+import video from "../../assets/icon/video.png"
 
 
 import gintama from "../../assets/img/gintama.webp"
 import naruto from "../../assets/img/naruto.webp"
 import fairy from "../../assets/img/fairy-tail.avif"
 import mashle from "../../assets/img/mashle.jpg"
+import street from "../../assets/img/street.jpg"
+import scoups from "../../assets/img/scoups.webp"
+import haejin from "../../assets/img/parkhaejin.jpg"
+import jisoo from "../../assets/img/jisoo.webp"
+
 
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import { Avatar, Button } from '@mui/material'
 
@@ -153,13 +159,50 @@ export default function LeftHome() {
             img: mashle,
             name: "Lance Crown Fanclub",
         },
+        {
+            id: 5,
+            img: street,
+            name: "Update Street News",
+        },{
+            id: 6,
+            img: scoups,
+            name: "Go go Scoups",
+        },{
+            id: 7,
+            img: haejin,
+            name: "Fandom Park Hae Jin",
+        },{
+            id: 8,
+            img: jisoo,
+            name: "Chichu",
+        },
     ]
+
+    const initNumberList = 5;
+
+    const [benefitList, setBenefitList] = useState([])
+    const [numberList, setNumberList] = useState(initNumberList)
+
+    const [shortcutList, setShortcutList] = useState([])
+    const [numberPages, setNumberPages] = useState(initNumberList)
+
+    useEffect(() => {
+        setBenefitList(listBenefit.slice(0, numberList))
+        setShortcutList(listShortcut.slice(0, numberPages))
+    }, [numberList, numberPages])
+
+    const handleShow = () => {
+        setNumberList(listBenefit.length)
+    }
+    const handleHide = () => {
+        setNumberList(initNumberList)
+    }
 
     return (
         <div className="lefthome-container">
             <div className="home-left-A">
                 <ul>
-                    {listBenefit.map((item) => (
+                    {/*listBenefit*/benefitList.map((item) => (
                         <li key={item.id}>
                             <div className='home-avatar'>
                                 <div className={`${(item.id == 1 ?
@@ -199,24 +242,38 @@ export default function LeftHome() {
                         //   </li>)
                     ))}
                 </ul>
-                <button className='btn-see-more'>
-                    <span className='text'>See more</span>
-                    <span className='icon'><KeyboardArrowDownIcon /></span>
+                <button className='btn-see-more'
+                        onClick={() => {
+                            {
+                                numberList === initNumberList && handleShow()
+                            }
+                            {
+                                numberList === listBenefit.length && handleHide()
+                            }
+                        }}>
+                    <span className='text'>
+                        {numberList === initNumberList ? "See more" : "See less"}
+                    </span>
+                    <span className='icon'>
+                        {numberList === initNumberList ? <KeyboardArrowDownIcon/> : <KeyboardArrowUpIcon />}
+                    </span>
                 </button>
             </div>
-            <div style={{ backgroundColor: "lightgray", height: "2px", margin: "10px 0" }}></div>
+
+            <div style={{ backgroundColor: "darkgray", height: "1px", width: "95%", margin: "10px 0", color: "rgb(240, 238, 238)" }}>haha</div>
+            
             <div className="home-left-B">
                 <div className="title">
                     <span className='text'>Your shortcuts</span>
                     <span className='icon'><MoreHorizIcon/></span>
                 </div>
                 <ul>
-                    {listShortcut.map((item) => (
+                    {/*listShortcut*/shortcutList.map((item) => (
                         <li key={item.id}>
                             <div className='home-avatar'>
                                 <div className='home-avatar-img'>
                                     {/* <img src={item.img} /> */}
-                                    <Avatar alt="" src={item.img} />
+                                    <Avatar alt="" src={item.img} variant="rounded"/>
                                 </div>
                                 <div className="home-avatar-name">
                                     <p>{item.name}</p>
@@ -225,9 +282,21 @@ export default function LeftHome() {
                         </li>
                     ))}
                 </ul>
-                <button className='btn-see-more'>
-                    <span className='text'>See more</span>
-                    <span className='icon'><KeyboardArrowDownIcon /></span>
+                <button className='btn-see-more'
+                    onClick={() => {
+                        {
+                            numberPages === initNumberList && setNumberPages(listShortcut.length)
+                        }
+                        {
+                            numberPages === listShortcut.length && setNumberPages(initNumberList)
+                        }
+                    }}>
+                    <span className='text'>
+                        {numberPages === initNumberList ? "See more" : "See less"}
+                    </span>
+                    <span className='icon'>
+                        {numberPages === initNumberList ? <KeyboardArrowDownIcon/> : <KeyboardArrowUpIcon />}
+                    </span>
                 </button>
             </div>
         </div>
