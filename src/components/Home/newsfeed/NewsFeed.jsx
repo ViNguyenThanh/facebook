@@ -7,7 +7,6 @@ import NewsContent from './NewsContent'
 const NewsFeed = () => {
   return (
     <div className='newsfeed-container'>
-   
         <Stories/>
         <PostStatus/>
         <NewsContent/>

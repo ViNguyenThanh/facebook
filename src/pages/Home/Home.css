@@ -2,6 +2,7 @@
     background-color: rgb(240, 238, 238);
     display: flex;
     justify-content: center;
+    width: 100%;
 } */
 
 
@@ -9,6 +10,7 @@
     background-color: rgb(240, 238, 238);
     display: flex;
     /* flex-direction: row; */
+    width: 100%;
 }
 
 
@@ -237,10 +239,9 @@
 
 .righthome-container .birthday{
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
-/* cx có thể sửa class .title của .birthday dù cho .title có trùng tên với nhiều class .title khác 
-NHƯNG nó chỉ sửa được những cái khác biệt, còn lại vẫn ăn thuộc tính của những class trùng tên trước đó*/
+/* cx có thể sửa class .title của .birthday dù cho .title có trùng tên với nhiều class .title khác */
 /* .birthday .title{ 
     margin-top: 10px;
 } */

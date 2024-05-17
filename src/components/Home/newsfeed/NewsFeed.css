@@ -88,22 +88,12 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
 
 /* Post Status */
 .poststatus-container{
-
-}
-
-
-
-
-
-
-
-/* News Content */
-.newscontent-container{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 .posting-place{
     width: 85%;
@@ -161,19 +151,35 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
 .bottom-posting-place span{
 }
 
+
+
+
+
+
+/* News Content */
+.newscontent-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .post{
-    margin-top: 20px;
     width: 85%;
     background-color: white;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 .top-post{
     padding: 15px 15px 0 15px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 .top-post-ava{
     margin-right: 10px;
+    cursor: pointer;
 }
 .top-post-ava img{
     width: 40px;
@@ -186,8 +192,211 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
 .top-post-name-title{
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
 }
-.top-post-name-hours p{
-    font-size: 13px;
+.top-post-name-hours{
     color: rgb(109, 109, 109);
+    cursor: pointer;
+}
+.top-post-name-title:hover, .top-post-name-hours:hover{
+    text-decoration: underline;
+}
+
+.top-post-icon{
+    position: absolute;
+    right: 2%;
+}
+.top-post-icon .icon1{
+    margin-right: 5px;
+    padding: 5px;
+    color: rgb(97, 95, 95);
+}
+.top-post-icon .icon2{
+    padding: 5px;
+    color: rgb(97, 95, 95);
+}
+.top-post-icon .icon1:hover, .top-post-icon .icon2:hover{
+    background-color: rgb(229, 228, 228);
+    border-radius: 50%;
+}
+
+.newscontent-content{
+    padding: 5px 10px 10px 15px;
+}
+
+.newscontent-img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /*điều chỉnh cách hình ảnh hoặc video được thay đổi kích thước để phù hợp với khung chứa của chúng, 
+                            mà vẫn giữ nguyên tỷ lệ khung hình ban đầu của nội dung*/
+    cursor: pointer;
+}
+
+.newscontent-reaction{
+    padding: 10px 0 0 15px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.newscontent-reaction .icon1{
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid white;
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    cursor: pointer;
+}
+.newscontent-reaction .icon2{
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid white;
+    position: absolute;
+    z-index: 1;
+    left: 27px;
+    cursor: pointer;
+}
+.newscontent-reaction span{
+    margin-left: 45px;
+    font-size: 15px;
+    color: rgb(109, 109, 109);
+    cursor: pointer;
+}
+.newscontent-reaction span:hover{
+    text-decoration: underline;
+}
+
+.newscontent-reaction .comment{
+    position: absolute;
+    right: 3%;
+    display: flex;
+    align-items: center;
+}
+.number-of-comments{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.number-of-comments p{
+    font-size: 15px;
+    color: rgb(109, 109, 109);
+    margin-right: 5px;
+}
+.number-of-comments img{
+    width: 23px;
+    height: 23px;
+}
+.number-of-shares{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.number-of-shares p{
+    font-size: 15px;
+    color: rgb(109, 109, 109);
+    margin-right: 5px;
+}
+.number-of-shares img{
+    width: 23px;
+    height: 23px;
+}
+.number-of-comments p:hover, .number-of-shares p:hover{
+    text-decoration: underline;
+}
+
+.newscontent-button{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.newscontent-button .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.newscontent-button .button img{
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+}
+.newscontent-button .button span{
+    color: rgb(109, 109, 109);
+}
+.newscontent-button .button:hover{
+    background-color: rgb(225, 225, 225);
+}
+
+
+.newscontent_list-comment{
+    padding: 5px 15px;
+}
+.newscontent_list-comment .view-more{
+    color: rgb(97, 95, 95);
+    font-weight: 600;
+    cursor: pointer;
+}
+.newscontent_list-comment .view-more:hover{
+    text-decoration: underline;
+}
+
+.user-comment{
+    margin-top: 10px;
+    display: flex;
+}
+.user-comment img, .input-comment img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.user-comment .comment{
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+    border-radius: 15px;
+}
+.user-comment .comment p:nth-of-type(1){
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.input-comment{
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+}
+.user-input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.user-input .input{
+    width: 95%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(236, 236, 236);
+}
+.user-input .icon{
+    padding: 5px;
+    border-radius: 100%;
+    color: rgb(83, 82, 82);
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+}
+.user-input .icon:hover{
+    background-color: lightgray;
 }
