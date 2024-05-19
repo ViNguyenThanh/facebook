@@ -1,4 +1,4 @@
-.newsfeed-container{
+.newsfeed-container {
     padding-top: 20px;
     display: flex;
     /* flex: 6; */
@@ -13,49 +13,61 @@
 
 
 /* Stories */
-.stories-container{
+.stories-container {
     width: 90%;
     display: flex;
     /* justify-content: center; */
-    position: relative; /*làm gốc để chỉnh cho .scroll-button*/
+    position: relative;
+    /*làm gốc để chỉnh cho .scroll-button*/
     overflow-x: hidden;
     margin-bottom: 20px;
 }
-.stories{
-    /* width: 80%; */ /*viết cái này thì sẽ ko kéo khung stories qua lại đc*/
+
+.stories {
+    /* width: 80%; */
+    /*viết cái này thì sẽ ko kéo khung stories qua lại đc*/
     display: flex;
     flex-wrap: nowrap;
-    transition: transform 0.3s ease; /* để khi scroll nó mượt hơn*/
+    transition: transform 0.3s ease;
+    /* để khi scroll nó mượt hơn*/
 }
+
 /*  div:nth-of-type(even) được sử dụng để chọn tất cả các phần tử <div> 
 nằm ở các vị trí chẵn trong số các anh chị em cùng loại của chúng */
-.stories div:nth-of-type(even){
+.stories div:nth-of-type(even) {
     margin: 0 20px;
 }
-.story-box{
+
+.story-box {
     /* tập code ở Stories.jsx */
     /* width: 50px;
     height: 150px; */
 }
+
 /* .story-box::before dùng để code 1 lớp nằm phía trên .story-box */
-.story-box::before{
-    content: ""; /* khi xài ::before BẮT BUỘC phải viết cái này */
+.story-box::before {
+    content: "";
+    /* khi xài ::before BẮT BUỘC phải viết cái này */
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.3); /*độ trong suốt là 0.3*/
-    z-index: 1; /*cho z-index là 1 thì những cái khác muốn hiện lên trên thì cứ cho z-index: 2*/
+    background-color: rgba(0, 0, 0, 0.3);
+    /*độ trong suốt là 0.3*/
+    z-index: 1;
+    /*cho z-index là 1 thì những cái khác muốn hiện lên trên thì cứ cho z-index: 2*/
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-.story-box .username{
+
+.story-box .username {
     position: absolute;
     z-index: 2;
     bottom: 3%;
     font-weight: bold;
 }
-.scroll-button{
+
+.scroll-button {
     position: absolute;
     top: 40%;
     /* color: rgb(214, 214, 214); */
@@ -70,13 +82,16 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     justify-content: center;
     align-items: center;
 }
-.left{
+
+.left {
     left: 0;
 }
-.right{
+
+.right {
     right: 0;
 }
-.scroll-button:hover{
+
+.scroll-button:hover {
     background-color: lightgray;
     border-radius: 100%;
 }
@@ -87,7 +102,7 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
 
 
 /* Post Status */
-.poststatus-container{
+.poststatus-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,40 +110,62 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     align-items: center;
     margin-bottom: 20px;
 }
-.posting-place{
+
+.posting-place {
     width: 85%;
     background-color: white;
     border-radius: 10px;
 }
-.top-posting-place{
+
+.top-posting-place {
     padding: 15px 15px 0 15px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.top-posting-place-img{   
+
+.top-posting-place-img {
     width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.top-posting-place-img img{
+
+.top-posting-place-img img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
 }
-.top-posting-place-write{
+
+.top-posting-place-write {
     width: 90%;
 }
-.bottom-posting-place{
+
+/* Nếu sd FormControl thì nó sẽ ăn .search-input bên Header.css */
+/* code chay */
+.top-posting-place-write .input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    font-size: 16px;
+}
+.top-posting-place-write .input:focus{ /* để khi bấm vào thẻ input nó ko in đậm cái outline */
+    outline: none;
+}
+
+.bottom-posting-place {
     padding: 5px 15px;
 }
-.bottom-posting-place ul{
+
+.bottom-posting-place ul {
     display: flex;
     width: 100%;
 }
-.bottom-posting-place li{
+
+.bottom-posting-place li {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -137,19 +174,22 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     cursor: pointer;
     padding: 5px;
 }
-.bottom-posting-place li:hover{
+
+.bottom-posting-place li:hover {
     background-color: rgb(232, 228, 228);
     border-radius: 10px;
 }
-.bottom-posting-place-icon{
+
+.bottom-posting-place-icon {
     margin-right: 5px;
 }
-.bottom-posting-place-icon img{
+
+.bottom-posting-place-icon img {
     width: 40px;
     height: 40px;
 }
-.bottom-posting-place span{
-}
+
+.bottom-posting-place span {}
 
 
 
@@ -157,7 +197,7 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
 
 
 /* News Content */
-.newscontent-container{
+.newscontent-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -165,81 +205,93 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     align-items: center;
 }
 
-.post{
+.post {
     width: 85%;
     background-color: white;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.top-post{
+
+.top-post {
     padding: 15px 15px 0 15px;
     display: flex;
     align-items: center;
     position: relative;
 }
-.top-post-ava{
+
+.top-post-ava {
     margin-right: 10px;
     cursor: pointer;
 }
-.top-post-ava img{
+
+.top-post-ava img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
 }
-.top-post-name{
 
-}
-.top-post-name-title{
+.top-post-name {}
+
+.top-post-name-title {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
-.top-post-name-hours{
+
+.top-post-name-hours {
     color: rgb(109, 109, 109);
     cursor: pointer;
 }
-.top-post-name-title:hover, .top-post-name-hours:hover{
+
+.top-post-name-title:hover,
+.top-post-name-hours:hover {
     text-decoration: underline;
 }
 
-.top-post-icon{
+.top-post-icon {
     position: absolute;
     right: 2%;
 }
-.top-post-icon .icon1{
+
+.top-post-icon .icon1 {
     margin-right: 5px;
     padding: 5px;
     color: rgb(97, 95, 95);
 }
-.top-post-icon .icon2{
+
+.top-post-icon .icon2 {
     padding: 5px;
     color: rgb(97, 95, 95);
 }
-.top-post-icon .icon1:hover, .top-post-icon .icon2:hover{
+
+.top-post-icon .icon1:hover,
+.top-post-icon .icon2:hover {
     background-color: rgb(229, 228, 228);
     border-radius: 50%;
 }
 
-.newscontent-content{
+.newscontent-content {
     padding: 5px 10px 10px 15px;
 }
 
-.newscontent-img{
+.newscontent-img {
     width: 100%;
     height: 400px;
-    object-fit: cover; /*điều chỉnh cách hình ảnh hoặc video được thay đổi kích thước để phù hợp với khung chứa của chúng, 
+    object-fit: cover;
+    /*điều chỉnh cách hình ảnh hoặc video được thay đổi kích thước để phù hợp với khung chứa của chúng, 
                             mà vẫn giữ nguyên tỷ lệ khung hình ban đầu của nội dung*/
     cursor: pointer;
 }
 
-.newscontent-reaction{
+.newscontent-reaction {
     padding: 10px 0 0 15px;
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
 }
-.newscontent-reaction .icon1{
+
+.newscontent-reaction .icon1 {
     width: 23px;
     height: 23px;
     background-color: white;
@@ -250,7 +302,8 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     left: 10px;
     cursor: pointer;
 }
-.newscontent-reaction .icon2{
+
+.newscontent-reaction .icon2 {
     width: 23px;
     height: 23px;
     background-color: white;
@@ -261,61 +314,72 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     left: 27px;
     cursor: pointer;
 }
-.newscontent-reaction span{
+
+.newscontent-reaction span {
     margin-left: 45px;
     font-size: 15px;
     color: rgb(109, 109, 109);
     cursor: pointer;
 }
-.newscontent-reaction span:hover{
+
+.newscontent-reaction span:hover {
     text-decoration: underline;
 }
 
-.newscontent-reaction .comment{
+.newscontent-reaction .comment {
     position: absolute;
     right: 3%;
     display: flex;
     align-items: center;
 }
-.number-of-comments{
+
+.number-of-comments {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.number-of-comments p{
+
+.number-of-comments p {
     font-size: 15px;
     color: rgb(109, 109, 109);
     margin-right: 5px;
 }
-.number-of-comments img{
+
+.number-of-comments img {
     width: 23px;
     height: 23px;
 }
-.number-of-shares{
+
+.number-of-shares {
     display: flex;
     align-items: center;
     margin-left: 15px;
     cursor: pointer;
 }
-.number-of-shares p{
+
+.number-of-shares p {
     font-size: 15px;
     color: rgb(109, 109, 109);
     margin-right: 5px;
 }
-.number-of-shares img{
+
+.number-of-shares img {
     width: 23px;
     height: 23px;
 }
-.number-of-comments p:hover, .number-of-shares p:hover{
+
+.number-of-comments p:hover,
+.number-of-shares p:hover {
     text-decoration: underline;
 }
 
-.newscontent-button{
+.newscontent-button {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
-.newscontent-button .button{
+
+.newscontent-button .button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,72 +388,88 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     border-radius: 5px;
     cursor: pointer;
 }
-.newscontent-button .button img{
+
+.newscontent-button .button img {
     width: 23px;
     height: 23px;
     margin-right: 10px;
 }
-.newscontent-button .button span{
-    color: rgb(109, 109, 109);
+
+.newscontent-button .button span {
+    color: rgb(130, 130, 130);
+    font-weight: bold;
 }
-.newscontent-button .button:hover{
+
+.newscontent-button .button:hover {
     background-color: rgb(225, 225, 225);
 }
 
 
-.newscontent_list-comment{
+.newscontent_list-comment {
     padding: 5px 15px;
 }
-.newscontent_list-comment .view-more{
+
+.newscontent_list-comment .view-more {
     color: rgb(97, 95, 95);
     font-weight: 600;
     cursor: pointer;
 }
-.newscontent_list-comment .view-more:hover{
+
+.newscontent_list-comment .view-more:hover {
     text-decoration: underline;
 }
 
-.user-comment{
+.user-comment {
     margin-top: 10px;
     display: flex;
 }
-.user-comment img, .input-comment img{
+
+.user-comment img, .input-comment img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
     margin-right: 10px;
     cursor: pointer;
 }
-.user-comment .comment{
+
+.user-comment .comment {
     background-color: rgb(236, 236, 236);
     padding: 10px;
     border-radius: 15px;
 }
-.user-comment .comment p:nth-of-type(1){
+
+.user-comment .comment p:nth-of-type(1) {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 3px;
     cursor: pointer;
 }
 
-.input-comment{
+.input-comment {
     margin-top: 10px;
     display: flex;
     position: relative;
 }
-.user-input{
+
+.user-input {
     width: 100%;
     display: flex;
     align-items: center;
 }
-.user-input .input{
+
+.user-input .input {
     width: 95%;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 25px;
     border: none;
     background-color: rgb(236, 236, 236);
+    font-size: 15px;
 }
-.user-input .icon{
+.user-input .input:focus{ /* để khi bấm vào thẻ input nó ko in đậm cái outline */
+    outline: none;
+}
+
+.user-input .icon {
     padding: 5px;
     border-radius: 100%;
     color: rgb(83, 82, 82);
@@ -397,6 +477,7 @@ nằm ở các vị trí chẵn trong số các anh chị em cùng loại của 
     right: 2%;
     cursor: pointer;
 }
-.user-input .icon:hover{
+
+.user-input .icon:hover {
     background-color: lightgray;
 }

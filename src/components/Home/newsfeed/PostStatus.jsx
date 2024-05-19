@@ -33,10 +33,11 @@ const PostStatus = () => {
                     <img src={image} />
                 </div>
                 <div className="top-posting-place-write">
-                    <FormControl sx={{ m: 1 }} variant="standard" className='search-input'
+                    {/* <FormControl sx={{ m: 1 }} variant="standard" className='search-input'
                         style={{ width: "95%" }}>
                         <InputBase placeholder='What&apos;s on your mind, Elys?' />
-                    </FormControl>
+                    </FormControl> */}
+                    <input type="text" className='input' placeholder='What&apos;s on your mind, Elys?' />
                 </div>
             </div>
 

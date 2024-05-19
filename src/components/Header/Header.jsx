@@ -47,7 +47,7 @@ export default function Header() {
 
             <div className='header-search'>
                 <FacebookRoundedIcon className='fb-icon' />
-                <FormControl fullWidth sx={{ m: 1 }} variant="standard" className='search-input'>
+                {/* <FormControl fullWidth sx={{ m: 1 }} variant="standard" className='search-input'>
                     <InputBase
                         startAdornment={
                             <InputAdornment position="start">
@@ -55,7 +55,11 @@ export default function Header() {
                             </InputAdornment>
                         }
                         placeholder='Search facebook' />
-                </FormControl>
+                </FormControl> */}
+                <div className="header-input">
+                    <input type="text" className='input' placeholder='Write a comment...' />
+                    <SearchIcon className='icon' />
+                </div>
             </div>
 
             <div className='header-icon'>
